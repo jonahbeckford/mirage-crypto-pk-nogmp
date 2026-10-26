@@ -1,0 +1,10 @@
+(library
+ (name mirage_crypto_pk)
+ (public_name mirage-crypto-pk-nogmp)
+ (libraries digestif mirage-crypto-rng))
+
+(install
+ (section lib_root)
+ (package mirage-crypto-pk-nogmp)
+ (files
+  (alias/mirage-crypto-pk/META as mirage-crypto-pk/META)))

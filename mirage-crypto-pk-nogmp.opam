@@ -1,0 +1,22 @@
+opam-version: "2.0"
+version: "2.0.2"
+synopsis: "mirage-crypto-pk without RSA, DSA and finite-field Diffie-Hellman arithmetic"
+description: """
+The library mirage-crypto-pk 2.0.2 without arithmetic: it has the same module names and types and no
+dependency on zarith or GMP. Every operation of RSA and finite-field Diffie-Hellman raises
+Failure "unsupported: ...". A TLS server with an ECDSA or Ed25519 certificate and ECDHE key
+exchange does not use them."""
+conflicts: ["mirage-crypto-pk"]
+maintainer: "jonah@diskuv.com"
+authors: ["Diskuv"]
+license: "ISC"
+homepage: "https://github.com/jonahbeckford/mirage-crypto-pk-nogmp"
+bug-reports: "https://github.com/jonahbeckford/mirage-crypto-pk-nogmp/issues"
+dev-repo: "git+https://github.com/jonahbeckford/mirage-crypto-pk-nogmp.git"
+build: [["dune" "build" "-p" name "-j" jobs]]
+depends: [
+  "ocaml" {>= "4.14.0"}
+  "dune" {>= "3.0"}
+  "digestif" {>= "1.1.4"}
+  "mirage-crypto-rng" {>= "2.0.0"}
+]

@@ -1,0 +1,3 @@
+requires = "mirage-crypto-pk-nogmp"
+version = "2.0.2"
+description = "Alias: mirage-crypto-pk without GMP"
